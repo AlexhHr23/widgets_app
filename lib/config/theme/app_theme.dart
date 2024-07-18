@@ -6,6 +6,7 @@ const colorList = <Color> [
   Colors.green,
   Colors.red,
   Colors.orange,
+  Colors.purple,
   Colors.pink,
 ];
 

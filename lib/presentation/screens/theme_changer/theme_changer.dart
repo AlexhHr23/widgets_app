@@ -11,16 +11,18 @@ class ThemeChangerScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
 
-    final isDarkMode = ref.watch(isDarkProvider);
+    final isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
 
     return Scaffold(
       appBar: AppBar(
         title: Text('Theme Changer Screen'),
         actions: [
           IconButton(
-            icon: Icon(isDarkMode ? Icons.light_mode_outlined : Icons.dark_mode_outlined),
+            icon: Icon(isDarkMode ? Icons.dark_mode_outlined : Icons.light_mode_outlined ),
             onPressed: (){
-              ref.read(isDarkProvider.notifier).update((state) => !state);
+              //ref.read(isDarkProvider.notifier).update((state) => !state);
+              ref.read(themeNotifierProvider.notifier)
+              .toggleDarkMode();
             }, 
           )
         ],

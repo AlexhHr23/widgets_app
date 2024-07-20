@@ -28,5 +28,9 @@ class ThemeNotifier extends StateNotifier<AppTheme> {
 
   }
 
+  void changeColorIndex(int colorIndex) {
+    state = state.copyWhith( selectedColor: colorIndex);
+  }
+
 
 }
